@@ -1,0 +1,165 @@
+/* <--- fonts ---> */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Outfit:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Oswald:wght@200&display=swap');
+
+:root {
+    /* <--- colors ---> */
+
+    --Dark-cyan: hsl(158, 36%, 37%); 
+    --Cream: hsl(30, 38%, 92%);
+    --Very-dark-blue: hsl(212, 21%, 14%);
+    --Dark-grayish-blue: hsl(228, 12%, 48%);
+    --White: hsl(0, 0%, 100%);
+    --Darker-cyan: hsl(158, 36%, 20%);
+
+    /* <--- font-family ---> */
+    --ff-fraunces: "Fraunces", serif;
+    --ff-montserrat: "Montserrat", sans-serif;
+    /* <--- font-weight ---> */
+    --fw-regular: 500;
+    --fw-bold: 500;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%)
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img, picture, svg {
+    display: block;
+    max-width: 100%;
+}
+
+button {
+    font: inherit;
+}
+
+p, h1 {
+    overflow-wrap: break-word;
+}
+
+h1 {
+    line-height: 1.1;
+}
+
+body {
+    font-family: var(--ff-base);
+    font-weight: var(--fw-regular);
+    font-size: 0.875rem;
+    color: var(--Dark-grayish-blue);
+    background-color: var(--Cream);
+    display: grid;
+    place-content: center;
+    margin: 1rem;
+}
+
+.visually-hidden:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.button {
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    border: 0;
+    border-radius: 0.5rem;
+    padding: 0.5em 1.5em;
+    background-color: var(--Dark-cyan);
+    color: var(--White);
+    font-weight: var(--fw-bold);
+    font-size: 0.925rem;
+}
+
+.button:is(:hover, :focus) {
+    background-color: var(--Darker-cyan);
+}
+
+.button[data-icon="shopping-cart"]::before {
+    content: "";
+    background-image: url("../images/icon-cart.svg");
+    width: 15px;
+    height: 16px;
+}
+
+.prices {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.product {
+    --content-padding: 1.5rem;
+    --content-spacing: 1rem;
+    display: grid;
+    background-color: var(--White);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    max-width: 600px;
+}
+
+@media (min-width: 600px) {
+    .product {
+        --content-padding: 2rem;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.product-content {
+    display: grid;
+    gap: var(--content-spacing);
+    padding: var(--content-padding);
+}
+
+.product-type {
+    font-size: 0.8125rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.product-name {
+    font-size: 2rem;
+    font-family: var(--ff-fraunces);
+    color: var(--Very-dark-blue);
+}
+
+.product-offer-price {
+    font-size: 2rem;
+    font-family: var(--ff-fraunces);
+    color: var(--Dark-cyan);
+    font-weight: var(--fw-bold);
+}
+
+footer {
+    padding: 1rem;
+}
